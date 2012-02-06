@@ -1,0 +1,112 @@
+" An example for a vimrc file.
+"
+" Maintainer:	Bram Moolenaar <Bram@vim.org>
+" Last change:	2002 Sep 19
+"
+" To use it, copy it to
+"     for Unix and OS/2:  ~/.vimrc
+"	      for Amiga:  s:.vimrc
+"  for MS-DOS and Win32:  $VIM\_vimrc
+"	    for OpenVMS:  sys$login:.vimrc
+
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" Egna prylar...
+set number
+set wildmode=list
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set mouse=a
+autocmd FileType ruby set tabstop=2|set shiftwidth=2
+autocmd FileType rhtml set tabstop=2|set shiftwidth=2
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+
+" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+" let &guioptions = substitute(&guioptions, "t", "", "g")
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" Map ESC to JJ
+imap jj <Esc>
+imap <C-Space> <C-n>
+imap <C-@> <C-n>
+
+" ,t to create a new tab in normal mode
+map <C-t> :tabnew<CR>
+
+" Map <C-h> and <C-l> to switch tabs
+map <C-h> :tabprevious<CR>
+map <C-l> :tabnext<CR>
+imap <C-h> <Esc>:tabprevious<CR>i
+imap <C-l> <Esc>:tabnext<CR>i
+
+" Switch syntax highlighting on
+syntax on
+set t_Co=256
+set background=dark
+let g:zenburn_high_Contrast=1
+colorscheme zenburn
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+    " Enable file type detection.
+    " Use the default filetype settings, so that mail gets 'tw' set to 72,
+    " 'cindent' is on in C files, etc.
+    " Also load indent files, to automatically do language-dependent indenting.
+    filetype plugin on
+    filetype plugin indent on
+
+    " Put these in an autocmd group, so that we can delete them easily.
+    augroup vimrcEx
+        au!
+
+        " For all text files set 'textwidth' to 78 characters.
+        autocmd FileType text setlocal textwidth=78
+
+        " When editing a file, always jump to the last known cursor position.
+        " Don't do it when the position is invalid or when inside an event handler
+        " (happens when dropping a file on gvim).
+        autocmd BufReadPost *
+                    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                    \   exe "normal g`\"" |
+                    \ endif
+
+    augroup END
+
+else
+
+    set autoindent		" always set autoindenting on
+
+endif " has("autocmd")
+
+" highlight trailing whitespace
+highlight TrailingWhitespace ctermbg=red ctermfg=white
+
+au VimEnter * match TrailingWhitespace /\s\+$/
+
+au BufWinEnter * match TrailingWhitespace /\s\+$/
+au InsertLeave * match TrailingWhitespace /\s\+$/
+au InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
+
+au BufRead,BufNewFile *.md set filetype=markdown
+
+if v:version >= 703
+    set colorcolumn=80
+    if has("gui_running")
+        hi ColorColumn guibg=#2d2d2d
+    else
+        hi ColorColumn ctermbg=Black
+    endif
+endif
