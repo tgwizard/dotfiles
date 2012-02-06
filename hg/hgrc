@@ -1,0 +1,7 @@
+[ui]
+username = Adam Renberg <tgwizard@gmail.com>
+
+[extensions]
+color = 
+hgext.graphlog = 
+hgext.purge = 
