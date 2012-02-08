@@ -12,7 +12,7 @@
     ci = commit
     br = branch
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    out = log origin..HEAD
+    out = log origin/master..HEAD
 
 [color]
     branch = auto
