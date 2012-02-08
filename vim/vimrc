@@ -101,6 +101,7 @@ au InsertLeave * match TrailingWhitespace /\s\+$/
 au InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
 
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.s  set filetype=nasm
 
 if v:version >= 703
     set colorcolumn=80
