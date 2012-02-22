@@ -95,7 +95,13 @@ alias l='ls -CF'
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-export PATH="~/bin/:/home/adam/.cabal/bin/:$PATH"
+if [ -d /home/adam/.cabal/bin ]; then
+    export PATH="/home/adam/.cabal/bin/:$PATH"
+fi
+
+if [ -d ~/bin ]; then
+    export PATH="~/bin/:$PATH"
+fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
