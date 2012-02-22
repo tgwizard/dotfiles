@@ -16,101 +16,66 @@ Bundle 'jnurmine/Zenburn'
 Bundle 'helino/vim-json'
 Bundle 'helino/vim-markdown'
 Bundle 'helino/vim-nasm'
-Bundle 'helino/vim-json'
+Bundle 'helino/vim-whitespace'
+Bundle 'helino/vim-ftplugins'
 
 " vim.org...
+" none yet
 
+" required by vundle
+filetype plugin indent on
 
-
-" Egna prylar...
-set number
+" misc
 set wildmode=list
+set mouse=a
+set backspace=indent,eol,start " allow backspacing over stuff in insert mode
+set history=50 " keep 50 lines of command line history
+
+" indentation
 set tabstop=4
 set expandtab
+set smarttab
+set smartindent
 set shiftwidth=4
-set mouse=a
+set autoindent
 
-" ??
-autocmd FileType ruby set tabstop=2|set shiftwidth=2
-autocmd FileType rhtml set tabstop=2|set shiftwidth=2
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-set history=50		" keep 50 lines of command line history
-set ruler		    " show the cursor position all the time
-set showcmd		    " display incomplete commands
-set incsearch		" do incremental searching
-
-" Switch syntax highlighting on
-syntax on
-
-" Key mappings
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" Map ESC to JJ
-imap jj <Esc>
-imap <C-Space> <C-n>
-imap <C-@> <C-n>
-
-" ,t to create a new tab in normal mode
-map <C-t> :tabnew<CR>
-
-" Map <C-h> and <C-l> to switch tabs
-map <C-h> :tabprevious<CR>
-map <C-l> :tabnext<CR>
-imap <C-h> <Esc>:tabprevious<CR>i
-imap <C-l> <Esc>:tabnext<CR>i
-
-" use zenburn as colorscheme
+" look
 set t_Co=256
 set background=dark
 let g:zenburn_high_Contrast=1
 colorscheme zenburn
+set number
+set ruler " show the cursor position all the time
+set showcmd " display incomplete commands
+set colorcolumn=80
 
-" Enable file type detection.
-" Use the default filetype settings, so that mail gets 'tw' set to 72,
-" 'cindent' is on in C files, etc.
-" Also load indent files, to automatically do language-dependent indenting.
-filetype plugin on
-filetype plugin indent on
+" search
+set hlsearch " highlight search
+set incsearch " incremental search, search as you type
+set smartcase
 
-" Put these in an autocmd group, so that we can delete them easily.
-augroup vimrcEx
-    au!
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal g`\"" |
+            \ endif
 
-    " For all text files set 'textwidth' to 78 characters.
-    autocmd FileType text setlocal textwidth=78
+" mappings
+" don't use Ex mode, use Q for formatting
+map Q gq
 
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    autocmd BufReadPost *
-                \ if line("'\"") > 0 && line("'\"") <= line("$") |
-                \   exe "normal g`\"" |
-                \ endif
+" map ESC to JJ
+imap jj <Esc>
+imap <C-Space> <C-n>
+imap <C-@> <C-n>
 
-augroup END
+" C-t to create a new tab in normal mode
+map <C-t> :tabnew<CR>
 
-" highlight trailing whitespace
-highlight TrailingWhitespace ctermbg=red ctermfg=white
-
-au VimEnter * match TrailingWhitespace /\s\+$/
-au BufWinEnter * match TrailingWhitespace /\s\+$/
-au InsertLeave * match TrailingWhitespace /\s\+$/
-au InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
-
-" filetypes
-au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.s  set filetype=nasm
-
-" mark the 80th column
-if v:version >= 703
-    set colorcolumn=80
-    if has("gui_running")
-        hi ColorColumn guibg=#2d2d2d
-    else
-        hi ColorColumn ctermbg=Black
-    endif
-endif
+" map <C-h> and <C-l> to switch tabs
+map <C-h> :tabprevious<CR>
+map <C-l> :tabnext<CR>
+imap <C-h> <Esc>:tabprevious<CR>i
+imap <C-l> <Esc>:tabnext<CR>i
