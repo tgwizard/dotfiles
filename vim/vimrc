@@ -2,6 +2,26 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" vundle, must be first
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" bundles
+" github
+Bundle 'jnurmine/Zenburn'
+
+" github/helino
+Bundle 'helino/vim-json'
+Bundle 'helino/vim-markdown'
+Bundle 'helino/vim-nasm'
+Bundle 'helino/vim-json'
+
+" vim.org...
+
+
+
 " Egna prylar...
 set number
 set wildmode=list
