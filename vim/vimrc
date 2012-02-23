@@ -53,6 +53,7 @@ set colorcolumn=80
 set hlsearch " highlight search
 set incsearch " incremental search, search as you type
 set smartcase
+highlight Search ctermfg=Black ctermbg=Yellow cterm=NONE
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -79,3 +80,8 @@ map <C-h> :tabprevious<CR>
 map <C-l> :tabnext<CR>
 imap <C-h> <Esc>:tabprevious<CR>i
 imap <C-l> <Esc>:tabnext<CR>i
+
+
+" commands
+" clear the current search highlight
+command CS let @/ = ""
