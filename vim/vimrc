@@ -64,6 +64,9 @@ autocmd BufReadPost *
             \ endif
 
 " mappings
+
+let mapleader=','
+
 " don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -81,6 +84,9 @@ map <C-l> :tabnext<CR>
 imap <C-h> <Esc>:tabprevious<CR>i
 imap <C-l> <Esc>:tabnext<CR>i
 
+" easy copy/past to clipboard
+map <leader>y "+y
+nmap <leader>p "+p
 
 " commands
 " clear the current search highlight
