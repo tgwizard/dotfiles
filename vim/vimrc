@@ -84,4 +84,4 @@ imap <C-l> <Esc>:tabnext<CR>i
 
 " commands
 " clear the current search highlight
-command CS let @/ = ""
+command! CS let @/ = ""
