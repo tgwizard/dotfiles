@@ -43,7 +43,6 @@ set autoindent
 set t_Co=256
 set background=dark
 let g:zenburn_high_Contrast=1
-colorscheme zenburn
 set number
 set ruler " show the cursor position all the time
 set showcmd " display incomplete commands
@@ -91,3 +90,23 @@ nmap <leader>p "+p
 " commands
 " clear the current search highlight
 command! CS let @/ = ""
+
+" windows-specific stuff
+" TODO: make into plugin
+if has("win32") || has("win16")
+    func Backspace()
+        if col('.') == 1
+            if line('.')  != 1
+                return  "\<ESC>kA\<Del>"
+            else
+                return ""
+            endif
+        else
+            return "\<Left>\<Del>"
+        endif
+    endfunc
+
+    inoremap  <c-r>=Backspace()<CR>
+else
+    colorscheme zenburn
+endif
