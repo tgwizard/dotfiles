@@ -47,6 +47,7 @@ set number
 set ruler " show the cursor position all the time
 set showcmd " display incomplete commands
 set colorcolumn=80
+syntax on
 
 " search
 set hlsearch " highlight search
