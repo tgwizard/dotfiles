@@ -8,9 +8,13 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+" mine
+Bundle 'tgwizard/vim-ruby'
+
 " bundles
 " github
 Bundle 'jnurmine/Zenburn'
+Bundle 'scrooloose/nerdtree'
 
 " github/helino
 Bundle 'helino/vim-json'
@@ -20,7 +24,6 @@ Bundle 'helino/vim-whitespace'
 Bundle 'helino/vim-ftplugins'
 
 " vim.org...
-" none yet
 
 " required by vundle
 filetype plugin indent on
@@ -87,6 +90,9 @@ imap <C-l> <Esc>:tabnext<CR>i
 " easy copy/past to clipboard
 map <leader>y "+y
 nmap <leader>p "+p
+
+"
+imap <S-CR> <CR><CR>end<Esc>-cc
 
 " commands
 " clear the current search highlight
