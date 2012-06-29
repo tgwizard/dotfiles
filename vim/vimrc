@@ -15,6 +15,7 @@ Bundle 'tgwizard/vim-ruby'
 " github
 Bundle 'jnurmine/Zenburn'
 Bundle 'scrooloose/nerdtree'
+Bundle 'kchmck/vim-coffee-script'
 
 " github/helino
 Bundle 'helino/vim-json'
@@ -24,6 +25,7 @@ Bundle 'helino/vim-whitespace'
 Bundle 'helino/vim-ftplugins'
 
 " vim.org...
+Bundle 'javascript'
 
 " required by vundle
 filetype plugin indent on
