@@ -1,5 +1,6 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
+"     vim +BundleInstall +qall
 set nocompatible
 
 " vundle, must be first
@@ -25,7 +26,7 @@ Bundle 'helino/vim-whitespace'
 Bundle 'helino/vim-ftplugins'
 
 " vim.org...
-Bundle 'javascript'
+Bundle 'javascript.vim'
 
 " required by vundle
 filetype plugin indent on
