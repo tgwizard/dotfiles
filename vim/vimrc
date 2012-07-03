@@ -26,10 +26,12 @@ Bundle 'helino/vim-whitespace'
 Bundle 'helino/vim-ftplugins'
 
 " vim.org...
-Bundle 'javascript.vim'
+Bundle 'python.vim'
 
 " required by vundle
 filetype plugin indent on
+
+set enc=utf-8
 
 " misc
 set wildmode=list
@@ -38,11 +40,11 @@ set backspace=indent,eol,start " allow backspacing over stuff in insert mode
 set history=50 " keep 50 lines of command line history
 
 " indentation
-set tabstop=4
+set tabstop=2
 set expandtab
 set smarttab
 set smartindent
-set shiftwidth=4
+set shiftwidth=2
 set autoindent
 
 " look
