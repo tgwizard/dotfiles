@@ -1,48 +1,37 @@
 [core]
-    editor = vim
-    excludesfile = ~/.gitignore_global
+	editor = vim
+	excludesfile = ~/.gitignore_global
+	pager = less -x2
 
 [user]
-    name = adam
-    email = tgwizard@gmail.com
+	name = adam
+	email = tgwizard@gmail.com
 
 [alias]
-    st = status -s -b
-    co = checkout
-    ci = commit
-    br = branch
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    out = log origin/master..HEAD
+	st = status -s -b
+	co = checkout
+	ci = commit
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	out = log origin/master..HEAD
 
 [color]
-    branch = auto
-    diff = auto
-    status = auto
+	branch = auto
+	diff = auto
+	status = auto
 
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
-
-[diff]
-	tool = bc3
-
-[difftool "bc3"]
-	path = c:/program files (x86)/beyond compare 3/bcomp.exe
-
-[merge]
-	tool = bc3
-
-[mergetool "bc3"]
-	path = c:/program files (x86)/beyond compare 3/bcomp.exe
+	added = yellow
+	changed = green
+	untracked = cyan
