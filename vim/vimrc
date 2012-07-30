@@ -57,6 +57,8 @@ set showcmd " display incomplete commands
 set colorcolumn=80
 syntax on
 
+set listchars=tab:>-,eol:$,trail:.,extends:#
+
 " search
 set hlsearch " highlight search
 set incsearch " incremental search, search as you type
