@@ -10,7 +10,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " mine
-Bundle 'tgwizard/vim-ruby'
+Bundle 'vim-ruby/vim-ruby'
 
 " bundles
 " github
