@@ -1,0 +1,4 @@
+" mappings
+
+" map ESC to JJ
+imap jj <Esc>
