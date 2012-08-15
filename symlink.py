@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import shutil
+import sys
 
 home = os.path.expanduser('~') + '/'
 files = {
@@ -23,6 +24,7 @@ def get_backup_dir():
 backup_dir = get_backup_dir()
 
 def main():
+	print "Setting up config files..."
 	for src, dest in files.iteritems():
 		handle_conf(src, dest)
 
@@ -52,6 +54,12 @@ def ensure_backup_dir():
 	if not os.path.exists(backup_dir):
 		os.mkdir(backup_dir)
 
+def handle_os_specific_conf():
+	print sys.platform
+	if sys.platform == "darwin":
+		print "Setting up conf files for Mac OS X..."
+		handle_conf('bash/bashrc_macosx', '.bashrc_macosx')
+
 def install_vim_packages():
 	print "installing vim packages with vundle..."
 	bundle_home = home + '.vim/bundle'
@@ -60,8 +68,10 @@ def install_vim_packages():
 		os.system("git clone https://github.com/gmarik/vundle %s/vundle" %bundle_home)
 	os.system("vim +BundleInsall +qall")
 
-def handle_os_specific_conf():
-	pass
+	syntax_dir = home + '.vim/syntax_checkers'
+	if not os.path.exists(syntax_dir):
+		print "Setting up Syntastic syntax checkers..."
+		os.symlink(home + '.vim/bundle/syntastic/syntax_checkers', syntax_dir)
 
 if __name__ == "__main__":
 	main()
