@@ -102,6 +102,10 @@ nmap <leader>p "+p
 "
 imap <S-CR> <CR><CR>end<Esc>-cc
 
+" NERDtree
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>w :NERDTreeFocus<CR>
+
 " commands
 " clear the current search highlight
 command! CS let @/ = ""
