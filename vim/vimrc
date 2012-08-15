@@ -103,6 +103,11 @@ nmap <leader>p "+p
 imap <S-CR> <CR><CR>end<Esc>-cc
 
 " NERDtree
+" automatically start when no files are specified
+autocmd vimenter * if !argc() | NERDTree | endif
+" close if only NERDTree is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" key bindings
 nmap <leader>d :NERDTreeToggle<CR>
 nmap <leader>w :NERDTreeFocus<CR>
 
