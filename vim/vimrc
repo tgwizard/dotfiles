@@ -16,6 +16,7 @@ Bundle 'vim-ruby/vim-ruby'
 " github
 Bundle 'jnurmine/Zenburn'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 Bundle 'kchmck/vim-coffee-script'
 
 " github/helino
@@ -124,3 +125,8 @@ if has("win32") || has("win16")
 else
     colorscheme zenburn
 endif
+
+" statusline
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
