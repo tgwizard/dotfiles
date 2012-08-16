@@ -95,6 +95,14 @@ map <C-l> :tabnext<CR>
 imap <C-h> <Esc>:tabprevious<CR>i
 imap <C-l> <Esc>:tabnext<CR>i
 
+" windows
+nmap <C-f><C-w> :wincmd w<CR>
+nmap <C-f><C-f> :wincmd w<CR>
+nmap <C-f><C-h> :wincmd h<CR>
+nmap <C-f><C-j> :wincmd j<CR>
+nmap <C-f><C-k> :wincmd k<CR>
+nmap <C-f><C-l> :wincmd l<CR>
+
 " easy copy/past to clipboard
 map <leader>y "+y
 nmap <leader>p "+p
@@ -109,7 +117,6 @@ autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " key bindings
 nmap <leader>d :NERDTreeToggle<CR>
-nmap <leader>w :NERDTreeFocus<CR>
 
 " commands
 " clear the current search highlight
