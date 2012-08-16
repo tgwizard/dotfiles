@@ -131,6 +131,6 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
 	source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-if [ -f ~/.bashrc_macosx ]; then
-	source ~/.bashrc_macosx
+if [ -f ~/.bashrc_platform ]; then
+	source ~/.bashrc_platform
 fi
