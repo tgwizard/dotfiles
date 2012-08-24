@@ -28,6 +28,7 @@ Bundle 'helino/vim-ftplugins'
 
 " vim.org...
 Bundle 'python.vim'
+Bundle 'rails.vim'
 
 " required by vundle
 filetype plugin indent on
