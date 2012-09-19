@@ -18,6 +18,7 @@ Bundle 'jnurmine/Zenburn'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-rails'
 
 " github/helino
 Bundle 'helino/vim-json'
@@ -28,7 +29,6 @@ Bundle 'helino/vim-ftplugins'
 
 " vim.org...
 Bundle 'python.vim'
-Bundle 'rails.vim'
 
 " required by vundle
 filetype plugin indent on
