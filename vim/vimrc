@@ -19,6 +19,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-rails'
+Bundle 'mileszs/ack.vim'
 
 " github/helino
 Bundle 'helino/vim-json'
@@ -66,6 +67,7 @@ set hlsearch " highlight search
 set incsearch " incremental search, search as you type
 set smartcase
 highlight Search ctermfg=Black ctermbg=Yellow cterm=NONE
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
