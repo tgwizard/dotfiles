@@ -50,7 +50,7 @@ set history=50 " keep 50 lines of command line history
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set expandtab
+set noexpandtab
 set smarttab
 set smartindent
 set autoindent
