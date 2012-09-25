@@ -47,18 +47,25 @@ set backspace=indent,eol,start " allow backspacing over stuff in insert mode
 set history=50 " keep 50 lines of command line history
 
 " indentation
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set smarttab
-set smartindent
+" commands to easily change tab size
+command! Tab set tabstop
+command! Tab2 set tabstop=2 | set shiftwidth=2 | set softtabstop=2
+command! Tab4 set tabstop=4 | set shiftwidth=4 | set softtabstop=4
+" and set it now
+Tab2
+
+" and to use tabs or spaces
+command! Tabs set expandtab | set smarttab
+command! Tabt set noexpandtab | set nosmarttab
+Tabs
+
 set autoindent
+set smartindent
 
 " look
 set t_Co=256
-set background=dark
 let g:zenburn_high_Contrast=1
+set background=dark
 set number
 set ruler " show the cursor position all the time
 set showcmd " display incomplete commands
