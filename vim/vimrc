@@ -24,6 +24,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-haml'
 Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim'
 
 " github/helino
 Bundle 'helino/vim-json'
