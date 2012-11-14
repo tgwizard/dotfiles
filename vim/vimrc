@@ -78,6 +78,7 @@ set listchars=tab:>-,eol:$,trail:.,extends:#
 " search
 set hlsearch " highlight search
 set incsearch " incremental search, search as you type
+set ignorecase
 set smartcase
 highlight Search ctermfg=Black ctermbg=Yellow cterm=NONE
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
