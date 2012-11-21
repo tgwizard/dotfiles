@@ -47,6 +47,12 @@ set mouse=a
 set backspace=indent,eol,start " allow backspacing over stuff in insert mode
 set history=50 " keep 50 lines of command line history
 
+" NERDTree ignore files
+" compiled stuff
+let NERDTreeIgnore = ['\.pyc$']
+" latex
+let NERDTreeIgnore += ['\.aux$','\.clo','\.bbl$','\.blg$','\.toc$']
+
 " indentation
 " commands to easily change tab size
 command! Tab set tabstop
