@@ -14,6 +14,11 @@
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	out = log origin/master..HEAD
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	filelog = log -u
+	fl = log -u
+	listaliases = "!git config -l | grep alias | cut -c 7-"
 
 [color]
 	branch = auto
