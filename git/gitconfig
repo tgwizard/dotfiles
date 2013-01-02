@@ -12,10 +12,10 @@
 	co = checkout
 	ci = commit
 	br = branch
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	out = log origin/master..HEAD
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	hist = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --date=iso
+	graph = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --graph --date=iso
+	ll = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --decorate --numstat
 	filelog = log -u
 	fl = log -u
 	listaliases = "!git config -l | grep alias | cut -c 7-"
