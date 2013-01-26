@@ -14,7 +14,7 @@ Bundle 'vim-ruby/vim-ruby'
 
 " bundles
 " github
-Bundle 'jnurmine/Zenburn'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'kchmck/vim-coffee-script'
@@ -71,13 +71,14 @@ set smartindent
 
 " look
 set t_Co=256
-let g:zenburn_high_Contrast=1
+"let g:solarized_termcolors=256
 set background=dark
 set number
 set ruler " show the cursor position all the time
 set showcmd " display incomplete commands
 set colorcolumn=80
 syntax on
+syntax enable
 
 set listchars=tab:>-,eol:$,trail:.,extends:#
 
@@ -86,7 +87,7 @@ set hlsearch " highlight search
 set incsearch " incremental search, search as you type
 set ignorecase
 set smartcase
-highlight Search ctermfg=Black ctermbg=Yellow cterm=NONE
+"highlight Search ctermfg=Black ctermbg=Yellow cterm=NONE
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " When editing a file, always jump to the last known cursor position.
@@ -162,7 +163,7 @@ if has("win32") || has("win16")
 
     inoremap  <c-r>=Backspace()<CR>
 else
-    colorscheme zenburn
+    colorscheme solarized
 endif
 
 " statusline
