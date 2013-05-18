@@ -22,19 +22,19 @@
 
 [color]
 	branch = auto
-	diff = auto
+  diff = auto
 	status = auto
 
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+	current = blue reverse
+	local = blue
+	remote = yellow
 
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+	meta = blue
+	frag = yellow
+	old = red
+	new = green
 
 [color "status"]
 	added = yellow
