@@ -80,7 +80,9 @@ set colorcolumn=80
 syntax on
 syntax enable
 
-set listchars=tab:>-,eol:$,trail:.,extends:#
+" set list to enable
+" set nolist to disable
+set listchars=tab:->,eol:$,trail:.,extends:#
 
 " search
 set hlsearch " highlight search
