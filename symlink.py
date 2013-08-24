@@ -14,8 +14,12 @@ files = {
 		'vrapperrc': '.vrapperrc'
 }
 
+linux_files = {
+    'bash/bashrc_linux': 'bashrc_platfom'
+}
+
 mac_files = {
-		'bash/bashrc_macosx': '.bashrc_platform'
+    'bash/bashrc_macosx': '.bashrc_platform'
 }
 
 def get_backup_dir():
@@ -67,7 +71,8 @@ def ensure_backup_dir():
 
 def handle_os_specific_conf():
 	if sys.platform == "linux2":
-		pass
+		print "Setting up conf files for Linux..."
+		handle_confs(linux_files)
 	if sys.platform == "darwin":
 		print "Setting up conf files for Mac OS X..."
 		handle_confs(mac_files)
