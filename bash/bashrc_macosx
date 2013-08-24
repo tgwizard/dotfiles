@@ -4,3 +4,5 @@ if [ -d ~/code/android-sdk-macosx ]; then
 fi
 
 source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+
+# Import "Solarized Dark.terminal" to get proper colors in Terminal and vim
