@@ -1,3 +1,5 @@
+echo "Initializing for Linux"
+
 # fix color palette as solarized wants it
 # http://stackoverflow.com/questions/5560658/ubuntu-vim-and-the-solarized-color-palette
 # http://www.xorcode.com/2011/04/11/solarized-vim-eclipse-ubuntu/
