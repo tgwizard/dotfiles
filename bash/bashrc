@@ -60,7 +60,7 @@ if [ "$color_prompt" = yes ]; then
   CLTIME='\[\033[00;35m\]'
   CLRESET='\[\033[00m\]'
   ARROWICON=$(echo -e "\xe2\x86\xb3") # Use echo -n ↳ | hexdump to find values
-  PS1="$CLUSERHOST\u@\h$CLPATH\w$CLGIT\$(parse_git_branch) $CLTIME[\D{%Y-%m-%d} \t]$CLRESET\\n\$ARROWICON $ "
+  PS1="$CLTIME[\D{%Y-%m-%d} \t] $CLUSERHOST\u@\h$CLPATH\w$CLGIT\$(parse_git_branch)$CLRESET\\n\$ARROWICON $ "
 else
   PS1='\u@\h:\w\$ '
 fi
