@@ -59,11 +59,13 @@ function parse_git_branch {
 }
 
 if [ "$color_prompt" = yes ]; then
-  GREEN='\[\033[01;32m\]'
-  BLUE='\[\033[00m\]:\[\033[01;34m\]'
-  GIT='\[\033[00;32m\]'
-  RESET='\[\033[00m\]'
-  PS1="$GREEN\u@\h$BLUE\w$GIT\$(parse_git_branch)$RESET\$ "
+  CLUSERHOST='\[\033[00;34m\]'
+  CLPATH='\[\033[00;33m\]'
+  CLGIT='\[\033[00;32m\]'
+  CLTIME='\[\033[00;35m\]'
+  CLRESET='\[\033[00m\]'
+  ARROWICON=`echo -e "\xe2\x86\xb3"` # Use echo -n ↳ | hexdump to find values
+  PS1="$CLUSERHOST\u@\h$CLPATH\w$CLGIT\$(parse_git_branch) $CLTIME[\t]$CLRESET\\n\$ARROWICON $ "
 else
   PS1='\u@\h:\w\$ '
 fi
@@ -72,15 +74,6 @@ unset color_prompt force_color_prompt
 # make ls use colors
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-    xterm*|rxvt*)
-        PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-        ;;
-    *)
-        ;;
-esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
