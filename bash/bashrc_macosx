@@ -5,4 +5,6 @@ fi
 
 source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
 
-# Import "Solarized Dark.terminal" to get proper colors in Terminal and vim
+# Import "Solarized (Dark|Light).terminal" to get proper colors in Terminal and
+# vim.
+# Source: https://github.com/tomislav/osx-terminal.app-colors-solarized
