@@ -8,3 +8,9 @@ source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
 # Import "Solarized (Dark|Light).terminal" to get proper colors in Terminal and
 # vim.
 # Source: https://github.com/tomislav/osx-terminal.app-colors-solarized
+
+# Key repeats, faster than what can be set through preference dialogs.
+# Restart (or awaken-after-sleep?) is required for the settings to take effect
+# Or, use https://pqrs.org/macosx/keyremap4macbook/ instead
+#defaults write NSGlobalDomain KeyRepeat -int 0
+#defaults write NSGlobalDomain InitialKeyRepeat -int 12
