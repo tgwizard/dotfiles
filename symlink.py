@@ -15,7 +15,7 @@ files = {
 }
 
 linux_files = {
-    'bash/bashrc_linux': 'bashrc_platfom'
+    'bash/bashrc_linux': '.bashrc_platfom'
 }
 
 mac_files = {
