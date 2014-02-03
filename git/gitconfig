@@ -3,6 +3,9 @@
 	excludesfile = ~/.gitignore_global
 	pager = less -x2
 
+[push]
+	default = simple
+
 [user]
 	name = adam
 	email = tgwizard@gmail.com
@@ -40,3 +43,4 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+
