@@ -3,7 +3,10 @@ if [ -d ~/code/android-sdk-macosx ]; then
 	PATH=~/code/android-sdk-macosx/platform-tools:$PATH
 fi
 
-source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 
 # Import "Solarized (Dark|Light).terminal" to get proper colors in Terminal and
 # vim.
