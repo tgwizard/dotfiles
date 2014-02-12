@@ -50,6 +50,10 @@ def handle_confs(conf_dict):
 def handle_conf(src, dest):
 	abssrc = os.path.abspath(src)
 	target = home + dest
+	parentDir = os.path.abspath(os.path.join(target, os.pardir))
+	if not os.path.exists(parentDir):
+		print "! Ignore: Could not find parent directory for %s" % target
+		return
 	if os.path.exists(target):
 		if os.path.islink(target):
 			os.remove(target)
@@ -58,7 +62,7 @@ def handle_conf(src, dest):
 
 	os.symlink(abssrc, target)
 
-	print "%s => %s" % (target, abssrc)
+	print "+ %s => %s" % (target, abssrc)
 
 def backup_existing_file(target):
 	ensure_backup_dir()
