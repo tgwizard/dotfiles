@@ -93,11 +93,11 @@ alias l='ls -CF'
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -d /home/adam/.cabal/bin ]; then
-    export PATH="/home/adam/.cabal/bin/:$PATH"
+    export PATH="/home/adam/.cabal/bin:$PATH"
 fi
 
 if [ -d ~/bin ]; then
-    export PATH="~/bin/:$PATH"
+    export PATH="~/bin:$PATH"
 fi
 
 if [ -f ~/.bash_aliases ]; then
