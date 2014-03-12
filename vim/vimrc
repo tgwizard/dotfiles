@@ -27,6 +27,7 @@ Bundle 'tpope/vim-fireplace'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'leafgarland/typescript-vim'
 
 " github/helino
 Bundle 'helino/vim-json'
@@ -66,6 +67,7 @@ Tab2
 " and to use tabs or spaces
 command! Tabs set expandtab | set smarttab
 command! Tabt set noexpandtab | set nosmarttab
+" and set it now
 Tabs
 
 set autoindent
