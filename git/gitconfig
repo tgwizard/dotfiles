@@ -44,3 +44,20 @@
 	changed = green
 	untracked = cyan
 
+[diff]
+	tool = bc3
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+	bc3 = trustExitCode
+[merge]
+	tool = bc3
+[mergetool]
+	prompt = false
+	keepBackup = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool "bc3"]
+	trustExitCode = true
