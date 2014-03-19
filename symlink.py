@@ -11,6 +11,7 @@ files = {
 		'git/gitconfig': '.gitconfig',
 		'git/gitignore_global': '.gitignore_global',
 		'hg/hgrc': '.hgrc',
+    'mongo/mongorc.js': '.mongorc.js',
 		'vrapperrc': '.vrapperrc'
 }
 
