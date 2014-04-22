@@ -15,9 +15,11 @@
 	co = checkout
 	ci = commit
 	br = branch
+  pb = pull --rebase
+  cp = cherry-pick -x
 	out = log origin/master..HEAD
-	hist = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --date=iso
-	graph = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --graph --date=iso
+	hist = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --decorate --date=iso
+	graph = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --decorate --graph --date=iso
 	ll = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --decorate --numstat
 	filelog = log -u
 	fl = log -u
