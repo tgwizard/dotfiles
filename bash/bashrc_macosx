@@ -19,6 +19,9 @@ export DOCKER_HOST=tcp://127.0.0.1:4243
 
 # Key repeats, faster than what can be set through preference dialogs.
 # Restart (or awaken-after-sleep?) is required for the settings to take effect
-# Or, use https://pqrs.org/macosx/keyremap4macbook/ instead
 #defaults write NSGlobalDomain KeyRepeat -int 0
 #defaults write NSGlobalDomain InitialKeyRepeat -int 12
+# Or, better, use https://pqrs.org/macosx/keyremap4macbook/ instead
+# Key Repeat Settings:
+#   Delay Until Repeat: 250
+#   Key Repeat: 30
