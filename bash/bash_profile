@@ -2,11 +2,6 @@ if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
 
-# autocomplete for ssh
-# http://www.commandlinefu.com/commands/view/2759/ssh-autocomplete
-complete -W "$(echo `cat .bash_history | egrep '^ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh
-
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 ### Added by the Heroku Toolbelt
