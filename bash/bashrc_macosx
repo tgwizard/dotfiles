@@ -11,7 +11,7 @@ if [ -d $(brew --prefix liquibase)/libexec ]; then
   export LIQUIBASE_HOME="$(brew --prefix liquibase)/libexec"
 fi
 
-export DOCKER_HOST=tcp://127.0.0.1:4243
+export DOCKER_HOST=tcp://localhost:2375
 
 # Import "Solarized (Dark|Light).terminal" to get proper colors in Terminal and
 # vim.
