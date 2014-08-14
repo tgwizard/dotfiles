@@ -11,6 +11,7 @@
 	email = tgwizard@gmail.com
 
 [alias]
+  ec = config --global -e
 	st = status -s -b
 	co = checkout
 	ci = commit
@@ -24,6 +25,13 @@
 	filelog = log -u
 	fl = log -u
 	listaliases = "!git config -l | grep alias | cut -c 7-"
+  # from http://haacked.com/archive/2014/07/28/github-flow-aliases/
+  undo = reset HEAD~1 --mixed
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+  cm = !git add -A && git commit -m
+  save = !git add -A && git commit -m 'SAVEPOINT'
+  wip = !git add -u && git commit -m "WIP"
 
 [color]
 	branch = auto
