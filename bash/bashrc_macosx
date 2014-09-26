@@ -1,6 +1,6 @@
 echo "Initializing for Mac OS X"
-if [ -d ~/code/android-sdk-macosx ]; then
-	PATH=~/code/android-sdk-macosx/platform-tools:$PATH
+if [ -d ~/bin/adt-bundle-mac-x86_64/sdk/platform-tools ]; then
+	PATH=~/bin/adt-bundle-mac-x86_64/sdk/platform-tools:$PATH
 fi
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
