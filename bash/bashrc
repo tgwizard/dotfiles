@@ -128,5 +128,3 @@ if [ -f ~/.bashrc_platform ]; then
 	source ~/.bashrc_platform
 fi
 
-### Added by the Heroku Toolbelt
-export PATH="$PATH:/usr/local/heroku/bin:$HOME/bin"
