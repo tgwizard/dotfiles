@@ -18,7 +18,7 @@
 	br = branch
   pb = pull --rebase
   cp = cherry-pick -x
-	out = log origin/master..HEAD
+	out = !git log origin/$(git rev-parse --abbrev-ref HEAD)..
 	hist = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --decorate --date=iso
 	graph = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --decorate --graph --date=iso
 	ll = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --decorate --numstat
@@ -28,6 +28,7 @@
   # from http://haacked.com/archive/2014/07/28/github-flow-aliases/
   undo = reset HEAD~1 --mixed
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  sm = !git submodule update --init --recursive
   wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
   cm = !git add -A && git commit -m
   save = !git add -A && git commit -m 'SAVEPOINT'
