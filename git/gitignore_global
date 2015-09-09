@@ -22,3 +22,6 @@ Thumbs.db
 # Scratch files #
 #################
 Scratch.hs
+
+.idea
+venv3
