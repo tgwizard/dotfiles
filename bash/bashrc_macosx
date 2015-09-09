@@ -23,6 +23,8 @@ export DOCKER_TLS_VERIFY=1
 # vim.
 # Source: https://github.com/tomislav/osx-terminal.app-colors-solarized
 
+# For iTerm 2: https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized
+
 # Key repeats, faster than what can be set through preference dialogs.
 # Restart (or awaken-after-sleep?) is required for the settings to take effect
 #defaults write NSGlobalDomain KeyRepeat -int 0

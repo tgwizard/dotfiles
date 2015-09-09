@@ -112,7 +112,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 
-# ruby
+# rvm
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
@@ -128,3 +128,10 @@ if [ -f ~/.bashrc_platform ]; then
 	source ~/.bashrc_platform
 fi
 
+# go
+export GOPATH=$HOME/code/go
+export PATH="$PATH:$GOPATH/bin"
+
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
