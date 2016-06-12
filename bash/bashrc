@@ -113,10 +113,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-
 # rvm
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # python
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
@@ -134,6 +132,9 @@ fi
 export GOPATH=$HOME/code/go
 export PATH="$PATH:$GOPATH/bin"
 
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# NVM
+export NVM_DIR="/Users/adam/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
