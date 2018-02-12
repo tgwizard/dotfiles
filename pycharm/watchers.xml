@@ -1,0 +1,21 @@
+<TaskOptions>
+  <TaskOptions>
+    <option name="arguments" value="--parallel --recursive --in-place $FilePath$" />
+    <option name="checkSyntaxErrors" value="true" />
+    <option name="description" />
+    <option name="exitCodeBehavior" value="ERROR" />
+    <option name="fileExtension" value="py" />
+    <option name="immediateSync" value="false" />
+    <option name="name" value="Run Yapf on Python files" />
+    <option name="output" value="" />
+    <option name="outputFilters">
+      <array />
+    </option>
+    <option name="outputFromStdout" value="false" />
+    <option name="program" value="/usr/local/bin/yapf" />
+    <option name="scopeName" value="All Places" />
+    <option name="trackOnlyRoot" value="false" />
+    <option name="workingDir" value="$ProjectFileDir$" />
+    <envs />
+  </TaskOptions>
+</TaskOptions>
