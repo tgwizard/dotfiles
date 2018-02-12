@@ -17,6 +17,7 @@
 	ci = commit
   ca = commit --amend -C HEAD
   cia = commit -a --amend -C HEAD
+  ri = rebase -i
 	br = branch
   pb = pull --rebase
   cp = cherry-pick -x
