@@ -129,7 +129,7 @@ if [ -f ~/.bashrc_platform ]; then
 fi
 
 # go
-export GOPATH=$HOME/code/go
+export GOPATH=$HOME
 export PATH="$PATH:$GOPATH/bin"
 
 ### Added by the Heroku Toolbelt
