@@ -88,6 +88,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias gti='git'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -138,3 +139,10 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # NVM
 export NVM_DIR="/Users/adam/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# load dev, but only if present and the shell is interactive
+if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then
+  source /opt/dev/dev.sh
+fi
+
+#. $(dirname $(dirname $(readlink $(which git ))))/etc/bash_completion.d/git-completion.bash

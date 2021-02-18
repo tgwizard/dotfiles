@@ -2,13 +2,14 @@
 	editor = vim
 	excludesfile = ~/.gitignore_global
 	pager = less -x2
+	commitGraph = true
 
 [push]
 	default = simple
 
 [user]
 	name = Adam Renberg Tamm
-	email = tgwizard@gmail.com
+	email = adam.renbergtamm@shopify.com
 
 [alias]
   ec = config --global -e
@@ -37,6 +38,7 @@
   save = !git add -A && git commit -m 'SAVEPOINT'
   wip = !git add -u && git commit -m "WIP"
   dlb = "!git branch --merged | grep -v \\* | xargs git branch -D"
+  dlba = "!git branch | grep -v \\* | xargs git branch -D"
 
 [color]
 	branch = auto
@@ -61,6 +63,8 @@
 
 [diff]
 	tool = bc3
+	algorithm = patience
+	noprefix = true
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [difftool]
@@ -76,3 +80,17 @@
 	trustExitCode = true
 [mergetool "bc3"]
 	trustExitCode = true
+[protocol]
+	version = 2
+[gc]
+	writeCommitGraph = true
+[url "https://github.com/Shopify/"]
+	insteadOf = git@github.com:Shopify/
+	insteadOf = git@github.com:shopify/
+	insteadOf = ssh://git@github.com/Shopify/
+	insteadOf = ssh://git@github.com/shopify/
+[credential]
+	helper = 
+	helper = store --file /opt/dev/var/private/git_credential_store
+[pull]
+	ff = only

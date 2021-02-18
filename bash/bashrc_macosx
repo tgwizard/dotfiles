@@ -16,8 +16,8 @@ if [ `which boot2docker` ]; then
   export DOCKER_HOST=$docker_socket
 fi
 
-export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+#export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
+#export DOCKER_TLS_VERIFY=1
 
 # Import "Solarized (Dark|Light).terminal" to get proper colors in Terminal and
 # vim.
