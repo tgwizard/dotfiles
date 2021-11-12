@@ -24,3 +24,5 @@ Scratch.hs
 
 .idea
 venv3
+
+lsp/

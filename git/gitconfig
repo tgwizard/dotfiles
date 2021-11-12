@@ -1,7 +1,7 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global
-	pager = less -x2
+	pager = less -F -X
 	commitGraph = true
 
 [push]
