@@ -31,6 +31,7 @@
   # from http://haacked.com/archive/2014/07/28/github-flow-aliases/
   undo = reset HEAD~1 --mixed
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  pf = !git push --force-with-lease
   sm = !git submodule update --init --recursive
   wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
   cm = !git add -A && git commit -m
