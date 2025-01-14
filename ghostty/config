@@ -1,0 +1,11 @@
+# to reload: cmd+shift+,
+
+# tabs
+keybind = cmd+right=next_tab
+keybind = cmd+left=previous_tab
+
+# splits
+keybind = opt+cmd+up=goto_split:top
+keybind = opt+cmd+right=goto_split:right
+keybind = opt+cmd+down=goto_split:bottom
+keybind = opt+cmd+left=goto_split:left
