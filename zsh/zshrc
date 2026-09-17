@@ -1,0 +1,54 @@
+setopt prompt_subst
+
+git_branch() {
+  local branch=$(git branch 2>/dev/null | grep '^*' | sed -E 's/^\* //')
+  if [[ -n "$branch" ]]; then
+    echo " %{$fg[green]%}$branch%{$reset_color%}"
+  fi
+}
+
+autoload -U colors
+colors
+
+PROMPT='%{$fg[blue]%}%~%{$reset_color%}$(git_branch)
+$ '
+
+. "$HOME/.local/bin/env"
+
+autoload -Uz compinit && compinit
+
+alias gti=git
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
+
+# pnpm
+export PNPM_HOME='/Users/adam/Library/pnpm'
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
+# fnm
+FNM_PATH="/opt/homebrew/opt/fnm/bin"
+if [ -d "$FNM_PATH" ]; then
+  eval "`fnm env --use-on-cd --shell zsh`"
+fi
+
+# Added by Antigravity
+export PATH="/Users/adam/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+export PATH=/Users/adam/.opencode/bin:$PATH
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/adam/.local/bin:$PATH"
