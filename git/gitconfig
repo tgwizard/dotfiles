@@ -8,7 +8,7 @@
 
 [user]
 	name = Adam Renberg Tamm
-	email = adam.renbergtamm@shopify.com
+	email = adam@stilla.ai
 
 [alias]
   ec = config --global -e
@@ -20,7 +20,7 @@
   ri = rebase -i
 	br = branch
   pb = pull --rebase
-  cp = cherry-pick -x
+  cp = cherry-pick
 	out = !git log origin/$(git rev-parse --abbrev-ref HEAD)..
 	hist = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --decorate --date=iso
 	graph = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --decorate --graph --date=iso
@@ -32,12 +32,13 @@
   undo = reset HEAD~1 --mixed
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
   pf = !git push --force-with-lease
+  poh = push -u origin HEAD
   sm = !git submodule update --init --recursive
   wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
   cm = !git add -A && git commit -m
   save = !git add -A && git commit -m 'SAVEPOINT'
   wip = !git add -u && git commit -m "WIP"
-  dlb = "!git branch --merged | grep -v \\* | xargs git branch -D"
+  dlb = "!git branch --merged | grep -v \\* | grep -v \\+ | xargs git branch -D"
   dlba = "!git branch | grep -v \\* | xargs git branch -D"
   default-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/
   com = !git checkout $(git default-branch)
@@ -85,3 +86,9 @@
 	ff = only
 [include]
 	path = /Users/adam/.config/dev/gitconfig
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
