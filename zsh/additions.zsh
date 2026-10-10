@@ -1,3 +1,5 @@
+export EDITOR=vim
+
 alias gti=git
 
 # Prompt: full path and git branch on one line, `$` on the next.
