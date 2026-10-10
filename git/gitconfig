@@ -8,7 +8,7 @@
 
 [user]
 	name = Adam Renberg Tamm
-	email = adam@stilla.ai
+	email = tgwizard@gmail.com
 
 [alias]
   ec = config --global -e
@@ -42,53 +42,3 @@
   dlba = "!git branch | grep -v \\* | xargs git branch -D"
   default-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/
   com = !git checkout $(git default-branch)
-
-[color]
-	branch = auto
-  diff = auto
-	status = auto
-
-[color "branch"]
-	current = blue reverse
-	local = blue
-	remote = yellow
-
-[color "diff"]
-	meta = blue
-	frag = yellow
-	old = red
-	new = green
-
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
-
-[diff]
-	tool = bc3
-	noprefix = true
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
-	bc3 = trustExitCode
-[merge]
-	tool = bc3
-[mergetool]
-	prompt = false
-	keepBackup = false
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
-[mergetool "bc3"]
-	trustExitCode = true
-[pull]
-	ff = only
-[include]
-	path = /Users/adam/.config/dev/gitconfig
-[credential "https://github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
